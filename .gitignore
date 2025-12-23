@@ -1,4 +1,8 @@
+# nix stuff
+result
+result-*
 .direnv
+
 .uuid
 .cache/
 .vs/
