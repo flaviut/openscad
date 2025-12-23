@@ -1,4 +1,10 @@
+# nix stuff
+result
+result-*
 .direnv
+
+*.AppImage
+
 .uuid
 .cache/
 .vs/

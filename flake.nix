@@ -13,12 +13,17 @@
         inputs.treefmt-nix.flakeModule
       ];
 
-      perSystem = { config, pkgs, system, ... }: {
+      perSystem = { config, pkgs, system, ... }: let
+        openscad = pkgs.callPackage ./package.nix {};
+      in {
         treefmt = {
           imports = [ ./treefmt.nix ];
         };
 
-        devShells.default = import ./shell.nix { pkgs = pkgs; };
+        packages.default = openscad;
+        packages.openscad = openscad;
+
+        devShells.default = import ./shell.nix { inherit pkgs openscad; };
       };
     };
 }
