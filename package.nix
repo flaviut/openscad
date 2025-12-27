@@ -29,6 +29,7 @@
   libsForQt5,
   libspnav,
   libzip,
+  catch2_3,
   manifold,
   mesa,
   mpfr,
@@ -96,6 +97,7 @@ clangStdenv.mkDerivation rec {
       qscintilla
       qtbase
       qtmultimedia
+      catch2_3
     ]
     ++ lib.optionals clangStdenv.hostPlatform.isLinux [
       xorg.libXdmcp
